@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Services - Premium Cars Dealership</title>
+</head>
+<body>
+  <header>
+    
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="inventory.html">Inventory</a></li>
+          <li><a href="financing.html">Financing</a></li>
+          <li><a href="services.html" >Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    
+  </header>
+
+  <main>
+    <div class="services-banner">
+      <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=2070&auto=format&fit=crop" alt="Car Service Center">
+      <div class="banner-overlay">
+        <h2>Professional Auto Services</h2>
+        <p>Expert care for your vehicle</p>
+      </div>
+    </div>
+
+    <section class="services-intro">
+      <h2>Our Services</h2>
+      <p>At Premium Cars Dealership, we offer a variety of services to make your car-buying and ownership experience as smooth as possible.</p>
+    </section>
+
+    <section class="services-filter">
+      <h3>Filter Services</h3>
+      <div class="filter-options">
+        <label><input type="checkbox" value="maintenance" checked> Maintenance</label>
+        <label><input type="checkbox" value="customization" checked> Customization</label>
+        <label><input type="checkbox" value="warranty" checked> Warranty</label>
+        <label><input type="checkbox" value="trade-in" checked> Trade-in</label>
+      </div>
+    </section>
+
+    <section class="services-container">
+      <div class="service-card" data-category="maintenance">
+        <h3>Maintenance & Repairs</h3>
+        <ul>
+          <li>Regular Service</li>
+          <li>Oil Changes</li>
+          <li>Brake Service</li>
+          <li>Engine Diagnostics</li>
+        </ul>
+        <button class="service-btn">Book Service</button>
+      </div>
+
+      <div class="service-card" data-category="trade-in">
+        <h3>Trade-In Services</h3>
+        <ul>
+          <li>Free Evaluation</li>
+          <li>Competitive Rates</li>
+          <li>Quick Process</li>
+          <li>All Brands Accepted</li>
+        </ul>
+        <button class="service-btn">Get Quote</button>
+      </div>
+
+      <div class="service-card" data-category="customization">
+        <h3>Vehicle Customization</h3>
+        <ul>
+          <li>Interior Upgrades</li>
+          <li>Paint Services</li>
+          <li>Performance Mods</li>
+          <li>Accessories</li>
+        </ul>
+        <button class="service-btn">Customize Now</button>
+      </div>
+
+      <div class="service-card" data-category="warranty">
+        <h3>Extended Warranty</h3>
+        <ul>
+          <li>Comprehensive Coverage</li>
+          <li>Flexible Plans</li>
+          <li>24/7 Support</li>
+          <li>Nationwide Service</li>
+        </ul>
+        <button class="service-btn">Learn More</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.filter-options input').forEach(checkbox => {
+      checkbox.addEventListener('change', filterServices);
+    });
+
+    function filterServices() {
+      const selectedCategories = Array.from(document.querySelectorAll('.filter-options input:checked'))
+        .map(checkbox => checkbox.value);
+
+      document.querySelectorAll('.service-card').forEach(card => {
+        const category = card.dataset.category;
+        card.style.display = selectedCategories.includes(category) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

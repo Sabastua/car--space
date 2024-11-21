@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Car Dealership - Inventory</title>
+</head>
+<body>
+  <header>
+    <h1>Our Inventory</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="inventory.html">Inventory</a>
+      <a href="financing.html">Financing</a>
+      <a href="services.html">Services</a>
+      
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="inventory-banner">
+    <img src="https://plus.unsplash.com/premium_photo-1661902046698-40bba703f396?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dealership Inventory" class="banner-image">
+  </section>
+
+  <section class="inventory-controls">
+    <div class="filters">
+      <select id="type" onchange="filterCars()">
+        <option value="all">All Types</option>
+        <option value="new">New</option>
+        <option value="used">Used</option>
+      </select>
+      <select id="brand" onchange="filterCars()">
+        <option value="all">All Brands</option>
+        <option value="toyota">Toyota</option>
+        <option value="honda">Honda</option>
+        <option value="bmw">BMW</option>
+        <option value="mercedes">Mercedes</option>
+        <!-- Add more brands -->
+      </select>
+    </div>
+  </section>
+
+  <section class="inventory-table">
+    <table id="car-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Model</th>
+          <th>Brand</th>
+          <th>Type</th>
+          <th>Year</th>
+          <th>Color</th>
+          <th>Mileage</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>S-Class</td>
+          <td>Mercedes</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Black</td>
+          <td>0</td>
+          <td>ksh 95,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>7 Series</td>
+          <td>BMW</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>White</td>
+          <td>0</td>
+          <td>ksh 87,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>Model S</td>
+          <td>Tesla</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Red</td>
+          <td>0</td>
+          <td>ksh 89,990</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>004</td>
+          <td>Camry</td>
+          <td>Toyota</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Silver</td>
+          <td>0</td>
+          <td>ksh 32,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>005</td>
+          <td>X5</td>
+          <td>BMW</td>
+          <td>Used</td>
+          <td>2022</td>
+          <td>Blue</td>
+          <td>25,000</td>
+          <td>ksh 45,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>006</td>
+          <td>Civic</td>
+          <td>Honda</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Gray</td>
+          <td>0</td>
+          <td>ksh 25,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>007</td>
+          <td>911</td>
+          <td>Porsche</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Yellow</td>
+          <td>0</td>
+          <td>ksh 112,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>008</td>
+          <td>A4</td>
+          <td>Audi</td>
+          <td>Used</td>
+          <td>2021</td>
+          <td>Black</td>
+          <td>35,000</td>
+          <td>ksh 28,500</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>009</td>
+          <td>RAV4</td>
+          <td>Toyota</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Green</td>
+          <td>0</td>
+          <td>ksh 34,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>010</td>
+          <td>Model 3</td>
+          <td>Tesla</td>
+          <td>Used</td>
+          <td>2022</td>
+          <td>White</td>
+          <td>28,000</td>
+          <td>ksh 35,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>011</td>
+          <td>GLE</td>
+          <td>Mercedes</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Silver</td>
+          <td>0</td>
+          <td>ksh 78,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>012</td>
+          <td>Accord</td>
+          <td>Honda</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Blue</td>
+          <td>0</td>
+          <td>ksh 31,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>013</td>
+          <td>Q7</td>
+          <td>Audi</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Black</td>
+          <td>0</td>
+          <td>ksh 65,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>014</td>
+          <td>Mustang</td>
+          <td>Ford</td>
+          <td>Used</td>
+          <td>2021</td>
+          <td>Red</td>
+          <td>42,000</td>
+          <td>ksh 32,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>015</td>
+          <td>Highlander</td>
+          <td>Toyota</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Gray</td>
+          <td>0</td>
+          <td>ksh 42,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>016</td>
+          <td>Model X</td>
+          <td>Tesla</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>White</td>
+          <td>0</td>
+          <td>ksh 98,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>017</td>
+          <td>M3</td>
+          <td>BMW</td>
+          <td>Used</td>
+          <td>2022</td>
+          <td>Blue</td>
+          <td>18,000</td>
+          <td>ksh 52,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>018</td>
+          <td>Cayenne</td>
+          <td>Porsche</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Black</td>
+          <td>0</td>
+          <td>ksh 92,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>019</td>
+          <td>CR-V</td>
+          <td>Honda</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Silver</td>
+          <td>0</td>
+          <td>ksh 35,000</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>020</td>
+          <td>A8</td>
+          <td>Audi</td>
+          <td>New</td>
+          <td>2024</td>
+          <td>Gray</td>
+          <td>0</td>
+          <td>ksh 86,000</td>
+          <td>Available</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

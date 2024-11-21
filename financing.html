@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Car Dealership - Financing</title>
+</head>
+<body>
+  <header>
+    <h1>Financing Options</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="inventory.html">Inventory</a>
+      <a href="financing.html">Financing</a>
+      <a href="services.html">Services</a>
+      
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Add financing banner -->
+  <div class="financing-banner">
+    <img src="https://images.unsplash.com/photo-1589758438368-0ad531db3366?q=80&w=2070&auto=format&fit=crop" alt="Financing Banner">
+    <div class="banner-overlay">
+      <h2>Flexible Financing Solutions</h2>
+      <p>Find the perfect payment plan for your dream car</p>
+    </div>
+  </div>
+
+  <!-- Add interest rate table -->
+  <div class="rate-table-container">
+    <h3>Current Interest Rates</h3>
+    <table class="rate-table">
+      <thead>
+        <tr>
+          <th>Credit Score</th>
+          <th>New Car Rate</th>
+          <th>Used Car Rate</th>
+          <th>Loan Term</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Excellent (750+)</td>
+          <td>3.99%</td>
+          <td>4.49%</td>
+          <td>Up to 72 months</td>
+        </tr>
+        <tr>
+          <td>Good (700-749)</td>
+          <td>4.99%</td>
+          <td>5.49%</td>
+          <td>Up to 72 months</td>
+        </tr>
+        <tr>
+          <td>Fair (650-699)</td>
+          <td>6.99%</td>
+          <td>7.49%</td>
+          <td>Up to 60 months</td>
+        </tr>
+        <tr>
+          <td>Poor (600-649)</td>
+          <td>9.99%</td>
+          <td>10.49%</td>
+          <td>Up to 48 months</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section>
+    <h2>Get the Best Financing Plan</h2>
+    <p>We offer flexible loan and lease options to suit your needs.</p>
+
+    <div class="loan-calculator">
+      <h3>Loan Calculator</h3>
+      <form id="loan-form">
+        <label for="car-price">Car Price (ksh):</label>
+        <input type="number" id="car-price" placeholder="Enter car price" required>
+
+        <label for="down-payment">Down Payment (ksh):</label>
+        <input type="number" id="down-payment" placeholder="Enter down payment" required>
+
+        <label for="interest-rate">Interest Rate (%):</label>
+        <input type="number" id="interest-rate" placeholder="Enter annual interest rate" required>
+
+        <label for="loan-term">Loan Term (years):</label>
+        <input type="number" id="loan-term" placeholder="Enter loan term" required>
+
+        <button type="button" onclick="calculateLoan()">Calculate</button>
+      </form>
+
+      <div id="loan-result" class="loan-result">
+        <h4>Monthly Payment:</h4>
+        <p id="monthly-payment">ksh0.00</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

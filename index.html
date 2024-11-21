@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Car Dealership - Homepage</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Premium Cars</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="inventory.html">Inventory</a>
+      <a href="financing.html">Financing</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="slider-container">
+    <div class="slider">
+      <div class="slide fade">
+        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop" alt="Luxury Car 1">
+        <div class="slide-content">
+          <h2>Drive Your Dream Car Today!</h2>
+          <p>Discover amazing deals on new and used cars.</p>
+          <a href="inventory.html" class="cta-button">Explore Inventory</a>
+        </div>
+      </div>
+
+      <div class="slide fade">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop" alt="Luxury Car 2">
+        <div class="slide-content">
+          <h2>Luxury At Its Finest</h2>
+          <p>Experience premium vehicles at competitive prices.</p>
+          <a href="inventory.html" class="cta-button">View Collection</a>
+        </div>
+      </div>
+
+      <div class="slide fade">
+        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2070&auto=format&fit=crop" alt="Luxury Car 3">
+        <div class="slide-content">
+          <h2>Premium Service</h2>
+          <p>Expert maintenance and support for your vehicle.</p>
+          <a href="services.html" class="cta-button">Our Services</a>
+        </div>
+      </div>
+
+      <!-- Navigation dots -->
+      <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+
+      <!-- Navigation arrows -->
+      <a class="prev" onclick="changeSlide(-1)">❮</a>
+      <a class="next" onclick="changeSlide(1)">❯</a>
+    </div>
+  </section>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Auto advance slides every 5 seconds
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
+
+    function changeSlide(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("slide");
+      let dots = document.getElementsByClassName("dot");
+      
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+</body>
+</html>
